@@ -5,7 +5,6 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from '@/components/ui/tooltip';
-import { LampContainer } from '@/components/ui/lamp';
 
 export function SkillsSection() {
   const skills = [
