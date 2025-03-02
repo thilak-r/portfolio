@@ -75,13 +75,13 @@ export function HeroSection() {
 </div>
 
             {/* Download CV Button */}
-                  <Button
-        size="lg"
-        className="bg-purple-600 hover:bg-purple-700 text-white rounded-full px-6"
-        onClick={() => window.open("/Thilak-R-Resume.pdf", "_blank")}
-      >
-        <FileDown className="mr-2 h-5 w-5" /> Download CV
-      </Button>
+                 <Button
+  size="lg"
+  className="bg-purple-600 hover:bg-purple-700 text-white rounded-full px-6"
+  onClick={() => window.open(process.env.PUBLIC_URL + "/Thilak-R-Resume.pdf", "_blank")}
+>
+  Download CV
+</Button>
           </motion.div>
 
           {/* Right Section - 3D Spline Scene */}
