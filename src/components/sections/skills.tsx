@@ -68,7 +68,7 @@ export function SkillsSection() {
   ];
 
   return (
-    <section id="skills" className="py-24 bg-[#0a0a0a] border-t border-[#2a2a2a]">
+    <section id="skills" className="py-24 bg-[#0a0a0a] ">
       <div   style={{ fontFamily:'rubik'}} className="container mx-auto px-6 max-w-7xl">
         <motion.div
           initial={{ opacity: 0 }}

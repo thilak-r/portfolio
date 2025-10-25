@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion';
 import { Github, Linkedin, Code, Mail, FileDown, ExternalLink } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { SplineScene } from '@/components/ui/splite';
 
 export function HeroSection() {
   const scrollToProjects = () => {
@@ -36,7 +35,7 @@ export function HeroSection() {
               style={{fontFamily:'Bahnschrift'}}
               transition={{ duration: 0.8, delay: 0.4 }}
             >
-              AI/ML Engineer & Full-Stack Developer
+              Full-Stack AI/ML Engineer
             </motion.h2>
 
             <motion.p
@@ -65,8 +64,6 @@ export function HeroSection() {
 >
   <FileDown className="mr-2 h-5 w-5" /> Download Resume
 </Button>
-
-
 
               <Button
                 size="lg"
@@ -116,15 +113,22 @@ export function HeroSection() {
           </motion.div>
 
           <motion.div
-            className="relative h-[400px] md:h-[600px]"
+            className="relative h-[400px] md:h-[600px] flex items-center justify-end pr-8 md:pr-12"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1, delay: 0.4 }}
           >
-            <SplineScene
-              scene="https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode"
-              className="w-full h-full transform"
-            />
+            <motion.div
+              className="relative w-[350px] h-[350px] md:w-[450px] md:h-[450px]"
+              whileHover={{ scale: 1.02 }}
+              transition={{ duration: 0.3 }}
+            >
+              <img
+                src="thilak.png"
+                alt="Thilak R"
+                className="w-full h-full object-cover rounded-full shadow-2xl"
+              />
+            </motion.div>
           </motion.div>
         </div>
       </div>
