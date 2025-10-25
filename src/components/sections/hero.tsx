@@ -1,112 +1,132 @@
 import { motion } from 'framer-motion';
-import { Github, Linkedin, Code, Mail, FileDown } from 'lucide-react';
+import { Github, Linkedin, Code, Mail, FileDown, ExternalLink } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { TypewriterEffect } from '@/components/ui/typewriter-effect';
 import { SplineScene } from '@/components/ui/splite';
-import { useEffect, useState } from 'react';
 
 export function HeroSection() {
-  const roles = [
-    "AI/ML Engineer",
-    "Full Stack Developer",
-    "Problem Solver"
-  ];
-  
-  const [, setIsMobile] = useState(false);
-  
-  useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
-    
-    // Check on initial load
-    checkMobile();
-    
-    // Add resize listener
-    window.addEventListener('resize', checkMobile);
-    
-    return () => window.removeEventListener('resize', checkMobile);
-  }, []);
+  const scrollToProjects = () => {
+    const projectsSection = document.getElementById('projects');
+    projectsSection?.scrollIntoView({ behavior: 'smooth' });
+  };
 
   return (
-    <section id="home" className="min-h-screen relative overflow-hidden">
+    <section id="home" className="min-h-screen relative overflow-hidden bg-[#0a0a0a]">
       <div className="container mx-auto px-6 max-w-7xl h-screen flex items-center">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center w-full">
           <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-left pl-8"
+            className="text-left space-y-6"
           >
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 gradient-text">
-              Hello, I'm Thilak R
-            </h1>
+            <motion.h1
+              className="text-5xl md:text-6xl lg:text-7xl font-bold text-white"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+            >
+              Hello, I'm <span className="text-[#00D9FF]">Thilak R</span>
+            </motion.h1>
 
-            <TypewriterEffect words={roles} className="text-2xl md:text-3xl text-gray-300 mb-8" />
+            <motion.h2
+              className="text-2xl md:text-3xl lg:text-4xl font-semibold text-[#A855F7]"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+            >
+              AI/ML Engineer & Full-Stack Developer
+            </motion.h2>
 
-            <p className="text-xl text-gray-400 mb-8 max-w-2xl text-justify">
-            I'm a driven Computer Science and Artificial Intelligence student with a strong foundation in software development and a passion for AI, web technologies, and problem-solving.
-            </p>
+            <motion.p
+              className="text-lg md:text-xl text-gray-300 leading-relaxed max-w-xl"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+            >
+              Final-year Computer Science & AI student specializing in machine learning,
+              LLM fine-tuning, and end-to-end AI system development. Experienced in building
+              production-ready models and deploying intelligent solutions.
+            </motion.p>
 
-            
-            <div className="flex items-center gap-6 mb-12">
+            <motion.div
+              className="flex flex-wrap gap-4 pt-4"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.8 }}
+            >
+              <Button
+                size="lg"
+                className="bg-[#00D9FF] hover:bg-[#00B8D4] text-black font-semibold px-8 py-6 text-lg transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-[#00D9FF]/50"
+                onClick={() => window.open('https://thilak-r.github.io/portfolio/Thilak-R-Resume.pdf')}
+              >
+                <FileDown className="mr-2 h-5 w-5" /> Download Resume
+              </Button>
+
+              <Button
+                size="lg"
+                variant="outline"
+                className="border-2 border-[#A855F7] text-[#A855F7] hover:bg-[#A855F7] hover:text-white font-semibold px-8 py-6 text-lg transition-all duration-300 hover:scale-105"
+                onClick={scrollToProjects}
+              >
+                View Projects <ExternalLink className="ml-2 h-5 w-5" />
+              </Button>
+            </motion.div>
+
+            <motion.div
+              className="flex items-center gap-6 pt-4"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.8, delay: 1 }}
+            >
               <motion.a
-                whileHover={{ scale: 1.1 }}
+                whileHover={{ scale: 1.2, y: -2 }}
                 whileTap={{ scale: 0.9 }}
                 href="https://github.com/thilak-r"
                 target="_blank"
-                className="text-gray-400 hover:text-purple-500 transition-colors"
+                className="text-gray-400 hover:text-[#00D9FF] transition-colors duration-300"
               >
-                <Github size={24} />
+                <Github size={28} />
               </motion.a>
               <motion.a
-                whileHover={{ scale: 1.1 }}
+                whileHover={{ scale: 1.2, y: -2 }}
                 whileTap={{ scale: 0.9 }}
                 href="https://linkedin.com/in/thilak120/"
                 target="_blank"
-                className="text-gray-400 hover:text-purple-500 transition-colors"
+                className="text-gray-400 hover:text-[#00D9FF] transition-colors duration-300"
               >
-                <Linkedin size={24} />
+                <Linkedin size={28} />
               </motion.a>
               <motion.a
-                whileHover={{ scale: 1.1 }}
+                whileHover={{ scale: 1.2, y: -2 }}
                 whileTap={{ scale: 0.9 }}
                 href="mailto:thilak22005@gmail.com"
-                className="text-gray-400 hover:text-purple-500 transition-colors"
+                className="text-gray-400 hover:text-[#00D9FF] transition-colors duration-300"
               >
-                <Mail size={24} />
+                <Mail size={28} />
               </motion.a>
-
-              {/* LeetCode link */}
               <motion.a
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.9 }}
-                  href="https://codolio.com/profile/thilak_r"
-                  target="_blank"
-                  className="text-gray-400 hover:text-purple-500 transition-colors"
-                >
-                  {/* Choose any icon from lucide-react, for example <Code />, <Braces />, or <Terminal /> */}
-                  <Code size={24} />
-                </motion.a>
-
-            </div>
-            
-            <Button
-              size="lg"
-              className="bg-purple-600 hover:bg-purple-700 text-white rounded-full px-6"
-              onClick={() => window.open('https://thilak-r.github.io/portfolio/Thilak-R-Resume.pdf')}
-            >
-              <FileDown className="mr-2 h-5 w-5" /> Download CV
-            </Button>
+                whileHover={{ scale: 1.2, y: -2 }}
+                whileTap={{ scale: 0.9 }}
+                href="https://codolio.com/profile/thilak_r"
+                target="_blank"
+                className="text-gray-400 hover:text-[#00D9FF] transition-colors duration-300"
+              >
+                <Code size={28} />
+              </motion.a>
+            </motion.div>
           </motion.div>
 
-          <div className="relative h-[500px] md:h-[600px] md:block">
-            {/* Preload the 3D model with optimized settings */}
+          <motion.div
+            className="relative h-[400px] md:h-[600px]"
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1, delay: 0.4 }}
+          >
             <SplineScene
               scene="https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode"
               className="w-full h-full transform"
             />
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

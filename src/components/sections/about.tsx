@@ -1,65 +1,97 @@
 import { motion } from 'framer-motion';
-import { Code2, Brain, Rocket } from 'lucide-react';
+import { GraduationCap, Briefcase, Trophy, Users } from 'lucide-react';
 
 export function AboutSection() {
   const highlights = [
     {
-      icon: <Code2 className="h-8 w-8 text-purple-400" />,
-      title: "Full Stack Solutions",
-      description: "Designing end-to-end systems across front-end and back-end."
+      icon: <GraduationCap className="h-8 w-8" />,
+      title: "Education",
+      description: "B.E. in CSE-AI, VTU (9.0 CGPA)"
     },
     {
-      icon: <Brain className="h-8 w-8 text-purple-400" />,
-      title: "AI & ML",
-      description: "Training and deploying machine learning models"
+      icon: <Briefcase className="h-8 w-8" />,
+      title: "Experience",
+      description: "AI/ML Intern at QUALBIZZ SOLUTIONS"
     },
     {
-      icon: <Rocket className="h-8 w-8 text-purple-400" />,
-      title: "Innovation Driven",
-      description: "Leveraging AI tools to increase efficiency"
+      icon: <Trophy className="h-8 w-8" />,
+      title: "Achievement",
+      description: "1st Place - Environmental Monitoring Hackathon"
+    },
+    {
+      icon: <Users className="h-8 w-8" />,
+      title: "Leadership",
+      description: "Conducted 2 Python workshops for 100+ students"
     }
   ];
 
   return (
-    <section id="about" className="py-20 bg-black/95">
+    <section id="about" className="py-24 bg-[#0a0a0a]">
       <div className="container mx-auto px-6 max-w-7xl">
         <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.5 }}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl font-bold gradient-text mb-4">About Me</h2>
-          <div className="h-1 w-20 bg-purple-600 mx-auto"></div>
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">About Me</h2>
+          <div className="h-1 w-24 bg-[#00D9FF] mx-auto"></div>
         </motion.div>
 
-        <div className="flex flex-col max-w-4xl mx-auto">
-          <div className="text-gray-300 text-lg mb-16">
-          <p className="mb-6 text-justify">
-  I am a Computer Science and Artificial Intelligence student currently in my sixth semester, with a strong focus on Machine Learning, Deep Learning, and MLOps. I have honed my skills in Python, C, and PHP, which I utilize to develop and deploy intelligent systems and data-driven solutions.
-</p>
-<p className="text-justify">
-  My academic and project experience has sharpened my analytical abilities and ignited a passion for leveraging cutting-edge technologies to solve complex problems. I am dedicated to advancing my expertise in ML, DL, and MLOps, and I aspire to contribute to innovative projects that transform industries through automation and intelligent insights.
-</p>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            viewport={{ once: true }}
+            className="space-y-6"
+          >
+            <div className="text-gray-300 text-lg leading-relaxed space-y-4">
+              <p>
+                I'm a final-year B.E. student in Computer Science and Artificial Intelligence at
+                Visvesvaraya Technological University (CGPA: 9.0/10), graduating in 2026. My expertise
+                spans machine learning model development, large language model fine-tuning, and full-stack
+                web development.
+              </p>
+              <p>
+                I recently completed a 2-month AI/ML internship at QUALBIZZ SOLUTIONS LLP, where I developed
+                prototype algorithms for data classification and designed UI/UX solutions for regulatory
+                compliance tools in the pharmaceutical domain.
+              </p>
+              <p>
+                I'm passionate about building intelligent systems that solve real-world problems, with a
+                strong foundation in PyTorch, Flask deployment, model explainability, and MLOps practices.
+                I thrive in collaborative environments and enjoy sharing knowledge through workshops and
+                technical mentorship.
+              </p>
+            </div>
+          </motion.div>
 
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full">
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            viewport={{ once: true }}
+            className="grid grid-cols-1 sm:grid-cols-2 gap-6"
+          >
             {highlights.map((item, index) => (
               <motion.div
                 key={index}
-                className="flex flex-col items-center text-center"
-                whileHover={{ scale: 1.05 }}
-                transition={{ duration: 0.3 }}
+                className="bg-[#1a1a1a] border border-[#2a2a2a] rounded-xl p-6 hover:border-[#00D9FF] transition-all duration-300 hover:shadow-lg hover:shadow-[#00D9FF]/20 hover:-translate-y-1"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: 0.5 + index * 0.1 }}
+                viewport={{ once: true }}
               >
-                <div className="rotating-icon bg-purple-500/10 rounded-full p-6 mb-4 hover:bg-purple-500/20 transition-colors">
+                <div className="text-[#00D9FF] mb-4">
                   {item.icon}
                 </div>
-                <h3 className="text-xl font-semibold text-white mb-2">{item.title}</h3>
-                <p className="text-gray-400">{item.description}</p>
+                <h3 className="text-lg font-semibold text-white mb-2">{item.title}</h3>
+                <p className="text-gray-400 text-sm leading-relaxed">{item.description}</p>
               </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

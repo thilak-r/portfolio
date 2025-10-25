@@ -8,17 +8,16 @@ export function Navigation() {
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
-      
-      // Determine active section based on scroll position
-      const sections = ['home', 'about', 'skills', 'projects', 'contact'];
-      const scrollPosition = window.scrollY + 300; // Offset to trigger earlier
-      
+
+      const sections = ['home', 'about', 'experience', 'skills', 'projects', 'certifications', 'achievements', 'contact'];
+      const scrollPosition = window.scrollY + 300;
+
       for (const section of sections) {
         const element = document.getElementById(section);
         if (element) {
           const offsetTop = element.offsetTop;
           const offsetHeight = element.offsetHeight;
-          
+
           if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
             setActiveSection(section);
             break;
@@ -44,26 +43,26 @@ export function Navigation() {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       className={`fixed w-full z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-black/80 backdrop-blur-md py-4' : 'bg-transparent py-6'
+        isScrolled ? 'bg-[#0a0a0a]/90 backdrop-blur-md py-4 border-b border-[#2a2a2a]' : 'bg-transparent py-6'
       }`}
     >
       <div className="container mx-auto px-6 max-w-7xl">
         <div className="flex items-center justify-between">
-          <a href="#home" className="text-2xl font-bold text-white">
-            Portfolio
+          <a href="#home" className="text-2xl font-bold text-white hover:text-[#00D9FF] transition-colors">
+            Thilak R
           </a>
-          
+
           <div className="hidden md:flex space-x-8">
             {navItems.map((item) => (
               <a
                 key={item.href}
                 href={item.href}
-                className={`text-gray-300 hover:text-purple-500 transition-colors duration-300 relative group ${
-                  activeSection === item.href.substring(1) ? 'text-purple-500' : ''
+                className={`text-gray-300 hover:text-[#00D9FF] transition-colors duration-300 relative group font-medium ${
+                  activeSection === item.href.substring(1) ? 'text-[#00D9FF]' : ''
                 }`}
               >
                 {item.label}
-                <span className={`absolute -bottom-1 left-0 w-0 h-0.5 bg-purple-500 transition-all duration-300 group-hover:w-full ${
+                <span className={`absolute -bottom-1 left-0 w-0 h-0.5 bg-[#00D9FF] transition-all duration-300 group-hover:w-full ${
                   activeSection === item.href.substring(1) ? 'w-full' : ''
                 }`}></span>
               </a>

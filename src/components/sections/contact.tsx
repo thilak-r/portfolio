@@ -56,7 +56,7 @@ export function ContactSection() {
   };
 
   return (
-    <section id="contact" className="py-20 bg-black">
+    <section id="contact" className="py-24 bg-[#0a0a0a] border-t border-[#2a2a2a]">
       <div className="container mx-auto px-6 max-w-7xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -65,30 +65,81 @@ export function ContactSection() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl font-bold gradient-text mb-4">Get in Touch</h2>
-          <div className="h-1 w-20 bg-purple-600 mx-auto"></div>
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">Let's Build Something Together</h2>
+          <div className="h-1 w-24 bg-[#00D9FF] mx-auto"></div>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-12">
+        <div className="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
+            className="space-y-8"
           >
-            <h3 className="text-2xl font-semibold text-white mb-8">Contact Information</h3>
-            <div className="space-y-6">
-              <div className="flex items-center gap-4 text-gray-300 hover:text-purple-500 transition-colors">
-                <Mail className="w-6 h-6 text-purple-500" />
-                <a href="mailto:thilak22005@gmail.com">thilak22005@gmail.com</a>
+            <div>
+              <h3 className="text-2xl font-bold text-white mb-6">Contact Information</h3>
+              <div className="space-y-6">
+                <div className="flex items-center gap-4 group">
+                  <div className="bg-[#00D9FF]/10 p-3 rounded-lg group-hover:bg-[#00D9FF]/20 transition-colors">
+                    <Mail className="w-6 h-6 text-[#00D9FF]" />
+                  </div>
+                  <a
+                    href="mailto:thilak22005@gmail.com"
+                    className="text-gray-300 hover:text-[#00D9FF] transition-colors text-lg"
+                  >
+                    thilak22005@gmail.com
+                  </a>
+                </div>
+                <div className="flex items-center gap-4 group">
+                  <div className="bg-[#00D9FF]/10 p-3 rounded-lg group-hover:bg-[#00D9FF]/20 transition-colors">
+                    <Phone className="w-6 h-6 text-[#00D9FF]" />
+                  </div>
+                  <a
+                    href="tel:+919353705867"
+                    className="text-gray-300 hover:text-[#00D9FF] transition-colors text-lg"
+                  >
+                    +91 9353705867
+                  </a>
+                </div>
+                <div className="flex items-center gap-4 group">
+                  <div className="bg-[#00D9FF]/10 p-3 rounded-lg group-hover:bg-[#00D9FF]/20 transition-colors">
+                    <MapPin className="w-6 h-6 text-[#00D9FF]" />
+                  </div>
+                  <span className="text-gray-300 text-lg">Mysore, Karnataka, India</span>
+                </div>
               </div>
-              <div className="flex items-center gap-4 text-gray-300 hover:text-purple-500 transition-colors">
-                <Phone className="w-6 h-6 text-purple-500" />
-                <a href="tel:+919353705867">+91 9353705867</a>
-              </div>
-              <div className="flex items-center gap-4 text-gray-300">
-                <MapPin className="w-6 h-6 text-purple-500" />
-                <span>Mysore, India</span>
+            </div>
+
+            <div>
+              <h4 className="text-lg font-semibold text-white mb-4">Social Links</h4>
+              <div className="flex gap-4">
+                <a
+                  href="https://github.com/thilak-r"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-400 hover:text-[#00D9FF] transition-colors"
+                >
+                  GitHub
+                </a>
+                <span className="text-gray-600">•</span>
+                <a
+                  href="https://linkedin.com/in/thilak120"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-400 hover:text-[#00D9FF] transition-colors"
+                >
+                  LinkedIn
+                </a>
+                <span className="text-gray-600">•</span>
+                <a
+                  href="https://thilak-r.github.io/portfolio"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-400 hover:text-[#00D9FF] transition-colors"
+                >
+                  Portfolio
+                </a>
               </div>
             </div>
           </motion.div>
@@ -99,7 +150,7 @@ export function ContactSection() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <Card className="p-6 bg-gray-900/50 border-purple-500/20 rounded-xl">
+            <Card className="p-8 bg-[#1a1a1a] border-[#2a2a2a] rounded-xl hover:border-[#00D9FF] transition-all duration-300">
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
                   <Input
@@ -107,7 +158,7 @@ export function ContactSection() {
                     value={formData.name}
                     onChange={handleChange}
                     placeholder="Your Name"
-                    className="bg-gray-800/50 border-gray-700 text-white placeholder:text-gray-500 rounded-lg"
+                    className="bg-[#0a0a0a] border-[#2a2a2a] text-white placeholder:text-gray-500 rounded-lg focus:border-[#00D9FF] transition-colors"
                     required
                   />
                 </div>
@@ -118,7 +169,7 @@ export function ContactSection() {
                     value={formData.email}
                     onChange={handleChange}
                     placeholder="Your Email"
-                    className="bg-gray-800/50 border-gray-700 text-white placeholder:text-gray-500 rounded-x1"
+                    className="bg-[#0a0a0a] border-[#2a2a2a] text-white placeholder:text-gray-500 rounded-lg focus:border-[#00D9FF] transition-colors"
                     required
                   />
                 </div>
@@ -128,16 +179,16 @@ export function ContactSection() {
                     value={formData.message}
                     onChange={handleChange}
                     placeholder="Your Message"
-                    className="bg-gray-800/50 border-gray-700 text-white placeholder:text-gray-500 min-h-[150px] rounded-x1"
+                    className="bg-[#0a0a0a] border-[#2a2a2a] text-white placeholder:text-gray-500 min-h-[150px] rounded-lg focus:border-[#00D9FF] transition-colors resize-none"
                     required
                   />
                 </div>
-                <Button 
-                  type="submit" 
-                  className="w-full bg-purple-600 hover:bg-purple-700 text-white rounded-lg"
+                <Button
+                  type="submit"
+                  className="w-full bg-[#00D9FF] hover:bg-[#00B8D4] text-black font-semibold rounded-lg py-6 transition-all duration-300 hover:scale-105"
                   disabled={isSubmitting}
                 >
-                  <Send className="w-4 h-4 mr-2" /> 
+                  <Send className="w-5 h-5 mr-2" />
                   {isSubmitting ? 'Sending...' : 'Send Message'}
                 </Button>
               </form>

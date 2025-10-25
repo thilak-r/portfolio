@@ -1,77 +1,117 @@
 import { motion } from 'framer-motion';
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from '@/components/ui/tooltip';
+import { Bot, Code, Database, BarChart3, Cloud, FileCode } from 'lucide-react';
 
 export function SkillsSection() {
-  const skills = [
-    { name: 'Bootstrap', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg' },
-    { name: 'C', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg' },
-    { name: 'C++', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg' },
-    { name: 'CSS3', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg' },
-    { name: 'Figma', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg' },
-    { name: 'Flask', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg' },
-    { name: 'HTML5', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg' },
-    { name: 'Java', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg' },
-    { name: 'JavaScript', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg' },
-    { name: 'MongoDB', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg' },
-    { name: 'MySQL', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg' },
-    { name: 'OpenCV', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/opencv/opencv-original.svg' },
-    { name: 'Pandas', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg' },
-    { name: 'PHP', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg' },
-    { name: 'Python', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg' },
-    { name: 'React', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg' },
-    { name: 'TensorFlow', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg' },
-    { name: 'TypeScript', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg' }
+  const skillCategories = [
+    {
+      icon: <Bot className="h-8 w-8" />,
+      title: "Machine Learning & AI",
+      skills: [
+        "PyTorch",
+        "Scikit-learn",
+        "TensorFlow basics",
+        "Model training & fine-tuning",
+        "Grad-CAM & explainability",
+        "Computer vision (YOLOv8, CNNs)"
+      ]
+    },
+    {
+      icon: <Code className="h-8 w-8" />,
+      title: "LLM & Advanced AI",
+      skills: [
+        "Fine-tuning Llama models with QLoRA",
+        "Chain-of-Thought (CoT) prompting",
+        "Unsloth framework",
+        "Dataset curation & processing"
+      ]
+    },
+    {
+      icon: <Database className="h-8 w-8" />,
+      title: "Development & Deployment",
+      skills: [
+        "Flask API development",
+        "MongoDB database management",
+        "Git version control",
+        "REST API design"
+      ]
+    },
+    {
+      icon: <BarChart3 className="h-8 w-8" />,
+      title: "Data Science",
+      skills: [
+        "Pandas, NumPy",
+        "Matplotlib, Seaborn",
+        "EDA & data preprocessing",
+        "Statistical analysis"
+      ]
+    },
+    {
+      icon: <Cloud className="h-8 w-8" />,
+      title: "MLOps & Cloud (Certified)",
+      skills: [
+        "Vertex AI (Google Cloud)",
+        "Feature Store management",
+        "Containerized ML workflows",
+        "Model monitoring basics"
+      ]
+    },
+    {
+      icon: <FileCode className="h-8 w-8" />,
+      title: "Languages",
+      skills: [
+        "Python",
+        "C",
+        "JavaScript",
+        "TypeScript"
+      ]
+    }
   ];
 
   return (
-    <section id="skills" className="py-20 bg-black">
+    <section id="skills" className="py-24 bg-[#0a0a0a] border-t border-[#2a2a2a]">
       <div className="container mx-auto px-6 max-w-7xl">
         <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.5 }}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl font-bold gradient-text mb-4">Skills</h2>
-          <p className="text-gray-400 mb-4">Technologies I work with</p>
-          <div className="h-1 w-20 bg-purple-600 mx-auto"></div>
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">Technical Skills</h2>
+          <div className="h-1 w-24 bg-[#00D9FF] mx-auto"></div>
         </motion.div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6 mb-20">
-          {skills.map((skill, index) => (
-            <TooltipProvider key={index}>
-              <Tooltip>
-                <TooltipTrigger asChild>
-                  <motion.div 
-                    className="flex flex-col items-center p-4 bg-gray-900/50 rounded-xl hover:bg-gray-800/50 transition-all duration-300"
-                    whileHover={{ scale: 1.05 }}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {skillCategories.map((category, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              viewport={{ once: true }}
+              className="bg-[#1a1a1a] border border-[#2a2a2a] rounded-xl p-6 hover:border-[#00D9FF] transition-all duration-300 hover:shadow-lg hover:shadow-[#00D9FF]/20 hover:-translate-y-1"
+            >
+              <div className="flex items-center gap-4 mb-6">
+                <div className="text-[#00D9FF]">
+                  {category.icon}
+                </div>
+                <h3 className="text-xl font-semibold text-white">{category.title}</h3>
+              </div>
+
+              <ul className="space-y-3">
+                {category.skills.map((skill, skillIndex) => (
+                  <li
+                    key={skillIndex}
+                    className="flex items-start gap-3 text-gray-300"
                   >
-                    <div className="overflow-hidden rounded-lg">
-                      <motion.img 
-                        src={skill.icon} 
-                        alt={skill.name} 
-                        className="w-12 h-12"
-                        initial={{ rotate: 0 }}
-                        whileHover={{ rotate: 360 }}
-                        transition={{ duration: 1.5, ease: "easeInOut" }}
-                      />
-                    </div>
-                    <span className="text-sm text-gray-400 mt-2">{skill.name}</span>
-                  </motion.div>
-                </TooltipTrigger>
-                <TooltipContent>
-                  <p>{skill.name}</p>
-                </TooltipContent>
-              </Tooltip>
-            </TooltipProvider>
+                    <div className="mt-1.5 h-2 w-2 rounded-full bg-[#A855F7] flex-shrink-0"></div>
+                    <span className="text-sm leading-relaxed">{skill}</span>
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
           ))}
         </div>
-
       </div>
     </section>
   );
