@@ -81,7 +81,7 @@ export function ContactSection() {
               <h3 className="text-2xl font-bold text-white mb-6">Contact Information</h3>
               <div className="space-y-6">
                 <div className="flex items-center gap-4 group">
-                  <div className="bg-[#00D9FF]/10 p-3 rounded-lg group-hover:bg-[#00D9FF]/20 transition-colors">
+                  <div className="rounded-lg group-hover:bg-[#00D9FF]/20 transition-colors">
                     <Mail className="w-6 h-6 text-[#00D9FF]" />
                   </div>
                   <a
@@ -92,7 +92,7 @@ export function ContactSection() {
                   </a>
                 </div>
                 <div className="flex items-center gap-4 group">
-                  <div className="bg-[#00D9FF]/10 p-3 rounded-lg group-hover:bg-[#00D9FF]/20 transition-colors">
+                  <div className=" rounded-lg group-hover:bg-[#00D9FF]/20 transition-colors">
                     <Phone className="w-6 h-6 text-[#00D9FF]" />
                   </div>
                   <a
@@ -103,7 +103,7 @@ export function ContactSection() {
                   </a>
                 </div>
                 <div className="flex items-center gap-4 group">
-                  <div className="bg-[#00D9FF]/10 p-3 rounded-lg group-hover:bg-[#00D9FF]/20 transition-colors">
+                  <div className=" rounded-lg group-hover:bg-[#00D9FF]/20 transition-colors">
                     <MapPin className="w-6 h-6 text-[#00D9FF]" />
                   </div>
                   <span className="text-gray-300 text-lg">Mysore, Karnataka, India</span>
