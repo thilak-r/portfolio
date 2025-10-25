@@ -27,27 +27,29 @@ export function AboutSection() {
 
   return (
     <section id="about" className="py-24 bg-[#0a0a0a]">
-      <div className="container mx-auto px-6 max-w-7xl">
+      <div   style={{ fontFamily:'rubik'}} className="container mx-auto px-6 max-w-7xl">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.4 }}
+          viewport={{ once: true, margin: "-100px" }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">About Me</h2>
+          <h2 className="text-4xl md:text-5xl font-rubik text-white mb-4">About Me</h2>
           <div className="h-1 w-24 bg-[#00D9FF] mx-auto"></div>
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            viewport={{ once: true }}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.4 }}
+            viewport={{ once: true, margin: "-100px" }}
             className="space-y-6"
           >
-            <div className="text-gray-300 text-lg leading-relaxed space-y-4">
+            <div 
+                  style={{ fontFamily:'rubik'}}
+            className="text-gray-300 font-Bahnschrift text-lg leading-relaxed space-y-4 text-justify">
               <p>
                 I'm a final-year B.E. student in Computer Science and Artificial Intelligence at
                 Visvesvaraya Technological University (CGPA: 9.0/10), graduating in 2026. My expertise
@@ -68,30 +70,20 @@ export function AboutSection() {
             </div>
           </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            viewport={{ once: true }}
-            className="grid grid-cols-1 sm:grid-cols-2 gap-6"
-          >
+          <div   style={{ fontFamily:'rubik'}} className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             {highlights.map((item, index) => (
-              <motion.div
+              <div
                 key={index}
-                className="bg-[#1a1a1a] border border-[#2a2a2a] rounded-xl p-6 hover:border-[#00D9FF] transition-all duration-300 hover:shadow-lg hover:shadow-[#00D9FF]/20 hover:-translate-y-1"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, delay: 0.5 + index * 0.1 }}
-                viewport={{ once: true }}
+                className="bg-[#1a1a1a] border border-[#2a2a2a] rounded-xl p-6 transition-colors duration-200 hover:border-[#00D9FF]"
               >
                 <div className="text-[#00D9FF] mb-4">
                   {item.icon}
                 </div>
                 <h3 className="text-lg font-semibold text-white mb-2">{item.title}</h3>
                 <p className="text-gray-400 text-sm leading-relaxed">{item.description}</p>
-              </motion.div>
+              </div>
             ))}
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>

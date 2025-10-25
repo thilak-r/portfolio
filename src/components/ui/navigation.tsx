@@ -33,8 +33,11 @@ export function Navigation() {
   const navItems = [
     { href: '#home', label: 'Home' },
     { href: '#about', label: 'About' },
+    { href: '#experience', label: 'Experience' },
     { href: '#skills', label: 'Skills' },
     { href: '#projects', label: 'Projects' },
+    { href: '#certifications', label: 'Certifications' },
+    { href: '#achievements', label: 'Achievements' },
     { href: '#contact', label: 'Contact' },
   ];
 
@@ -43,12 +46,16 @@ export function Navigation() {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       className={`fixed w-full z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-[#0a0a0a]/90 backdrop-blur-md py-4 border-b border-[#2a2a2a]' : 'bg-transparent py-6'
+        isScrolled ? 'bg-[#0a0a0a]/80 backdrop-blur-lg py-4 border-b border-[#2a2a2a]/50' : 'bg-transparent py-6'
       }`}
     >
       <div className="container mx-auto px-6 max-w-7xl">
         <div className="flex items-center justify-between">
-          <a href="#home" className="text-2xl font-bold text-white hover:text-[#00D9FF] transition-colors">
+          <a 
+            href="#home" 
+            className="text-1xl font-bold text-white hover:text-[#00D9FF] transition-colors"
+            style={{ fontFamily: "" }}
+          >
             Thilak R
           </a>
 
@@ -57,7 +64,7 @@ export function Navigation() {
               <a
                 key={item.href}
                 href={item.href}
-                className={`text-gray-300 hover:text-[#00D9FF] transition-colors duration-300 relative group font-medium ${
+                className={`text-sm text-gray-300 hover:text-[#00D9FF] transition-colors duration-300 relative group font-medium ${
                   activeSection === item.href.substring(1) ? 'text-[#00D9FF]' : ''
                 }`}
               >

@@ -69,30 +69,26 @@ export function SkillsSection() {
 
   return (
     <section id="skills" className="py-24 bg-[#0a0a0a] border-t border-[#2a2a2a]">
-      <div className="container mx-auto px-6 max-w-7xl">
+      <div   style={{ fontFamily:'rubik'}} className="container mx-auto px-6 max-w-7xl">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.4 }}
+          viewport={{ once: true, margin: "-100px" }}
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">Technical Skills</h2>
-          <div className="h-1 w-24 bg-[#00D9FF] mx-auto"></div>
+          <div className="h-1 w-24 bg-[#00D9FF] mx-auto rounded-full"></div>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {skillCategories.map((category, index) => (
-            <motion.div
+            <div
               key={index}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              viewport={{ once: true }}
-              className="bg-[#1a1a1a] border border-[#2a2a2a] rounded-xl p-6 hover:border-[#00D9FF] transition-all duration-300 hover:shadow-lg hover:shadow-[#00D9FF]/20 hover:-translate-y-1"
+              className="bg-[#1a1a1a] border-2 border-[#2a2a2a] rounded-2xl p-6 transition-colors duration-200 hover:border-[#00D9FF] group"
             >
-              <div className="flex items-center gap-4 mb-6">
-                <div className="text-[#00D9FF]">
+              <div className="flex items-center gap-4 mb-6 pb-4 border-b border-[#2a2a2a]">
+                <div className="bg-[#00D9FF]/10 p-3 rounded-xl border border-[#00D9FF]/20 text-[#00D9FF] transition-all duration-200 group-hover:bg-[#00D9FF]/20">
                   {category.icon}
                 </div>
                 <h3 className="text-xl font-semibold text-white">{category.title}</h3>
@@ -109,7 +105,7 @@ export function SkillsSection() {
                   </li>
                 ))}
               </ul>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

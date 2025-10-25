@@ -20,18 +20,20 @@ export function HeroSection() {
             className="text-left space-y-6"
           >
             <motion.h1
-              className="text-5xl md:text-6xl lg:text-7xl font-bold text-white"
+              className="text-5xl md:text-6xl lg:text-6xl font-bold text-white "
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
+              style = {{fontFamily: 'RUbik'}}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
               Hello, I'm <span className="text-[#00D9FF]">Thilak R</span>
             </motion.h1>
 
             <motion.h2
-              className="text-2xl md:text-3xl lg:text-4xl font-semibold text-[#A855F7]"
+              className="text-2xl md:text-3xl lg:text-3xl font-semibold text-[#A855F7]"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
+              style={{fontFamily:'Bahnschrift'}}
               transition={{ duration: 0.8, delay: 0.4 }}
             >
               AI/ML Engineer & Full-Stack Developer
@@ -41,6 +43,7 @@ export function HeroSection() {
               className="text-lg md:text-xl text-gray-300 leading-relaxed max-w-xl"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
+               style={{fontFamily:'Rubik'}}
               transition={{ duration: 0.8, delay: 0.6 }}
             >
               Final-year Computer Science & AI student specializing in machine learning,
@@ -54,17 +57,21 @@ export function HeroSection() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.8 }}
             >
-              <Button
-                size="lg"
-                className="bg-[#00D9FF] hover:bg-[#00B8D4] text-black font-semibold px-8 py-6 text-lg transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-[#00D9FF]/50"
-                onClick={() => window.open('https://thilak-r.github.io/portfolio/Thilak-R-Resume.pdf')}
-              >
-                <FileDown className="mr-2 h-5 w-5" /> Download Resume
-              </Button>
+             <Button
+  size="lg"
+  style={{ borderRadius: '10px' ,  fontFamily:'Bahnschrift'}}
+  className="bg-[#00D9FF] hover:bg-[#00B8D4] text-black font-semibold px-8 py-6 text-lg transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-[#00D9FF]/50"
+  onClick={() => window.open('https://thilak-r.github.io/portfolio/Thilak-R-Resume.pdf')}
+>
+  <FileDown className="mr-2 h-5 w-5" /> Download Resume
+</Button>
+
+
 
               <Button
                 size="lg"
                 variant="outline"
+                style={{ borderRadius: '10px' ,  fontFamily:'Bahnschrift'}}
                 className="border-2 border-[#A855F7] text-[#A855F7] hover:bg-[#A855F7] hover:text-white font-semibold px-8 py-6 text-lg transition-all duration-300 hover:scale-105"
                 onClick={scrollToProjects}
               >
@@ -104,15 +111,7 @@ export function HeroSection() {
               >
                 <Mail size={28} />
               </motion.a>
-              <motion.a
-                whileHover={{ scale: 1.2, y: -2 }}
-                whileTap={{ scale: 0.9 }}
-                href="https://codolio.com/profile/thilak_r"
-                target="_blank"
-                className="text-gray-400 hover:text-[#00D9FF] transition-colors duration-300"
-              >
-                <Code size={28} />
-              </motion.a>
+           
             </motion.div>
           </motion.div>
 

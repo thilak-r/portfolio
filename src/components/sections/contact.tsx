@@ -57,7 +57,7 @@ export function ContactSection() {
 
   return (
     <section id="contact" className="py-24 bg-[#0a0a0a] border-t border-[#2a2a2a]">
-      <div className="container mx-auto px-6 max-w-7xl">
+      <div   style={{ fontFamily:'rubik'}} className="container mx-auto px-6 max-w-7xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
