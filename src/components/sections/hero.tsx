@@ -54,11 +54,11 @@ export function HeroSection() {
               transition={{ duration: 0.8, delay: 0.6 }}
             >
               Final-year Computer Science & AI student specializing in machine learning,
-              LLM fine-tuning, and end-to-end AI system development. Experienced in building
+              Deep learning, and end-to-end AI system development. Experienced in building
               production-ready models and deploying intelligent solutions.
             </motion.p>
 
-            <motion.div
+           <motion.div
               // Key Change: Center buttons on mobile, left-align on desktop
               className="flex flex-wrap gap-4 pt-4 justify-center md:justify-start"
               initial={{ opacity: 0, y: 20 }}
@@ -73,7 +73,16 @@ export function HeroSection() {
               >
                 <FileDown className="mr-2 h-5 w-5" /> Download Resume
               </Button>
-
+           
+               <Button
+                size="lg"
+                style={{ borderRadius: '10px', fontFamily: 'Bahnschrift' }}
+                className="bg-[#00D9FF] hover:bg-[#00B8D4] text-black font-semibold px-8 py-6 text-lg transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-[#00D9FF]/50"
+                onClick={() => window.location.href = '#contact'}
+              >
+                
+                <div className="mr-2 h-5 w-5" />  &nbsp; &nbsp; &nbsp; Hire Me          &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+              </Button>
               <Button
                 size="lg"
                 variant="outline"
@@ -81,7 +90,7 @@ export function HeroSection() {
                 className="border-2 border-[#A855F7] text-[#A855F7] hover:bg-[#A855F7] hover:text-white font-semibold px-8 py-6 text-lg transition-all duration-300 hover:scale-105"
                 onClick={scrollToProjects}
               >
-                View Projects <ExternalLink className="ml-2 h-5 w-5" />
+              &nbsp; &nbsp; View Projects &nbsp; &nbsp;  <ExternalLink className="ml-2 h-5 w-5" />
               </Button>
             </motion.div>
 

@@ -19,7 +19,7 @@ export function SkillsSection() {
       icon: <Code className="h-8 w-8" />,
       title: "LLM & Advanced AI",
       skills: [
-        "Fine-tuning Llama models with QLoRA",
+        "Fine-tuning models with QLoRA",
         "Chain-of-Thought (CoT) prompting",
         "Unsloth framework",
         "Dataset curation & processing"
@@ -32,7 +32,7 @@ export function SkillsSection() {
         "Flask API development",
         "MongoDB database management",
         "Git version control",
-        "REST API design"
+       
       ]
     },
     {
@@ -51,8 +51,6 @@ export function SkillsSection() {
       skills: [
         "Vertex AI (Google Cloud)",
         "Feature Store management",
-        "Containerized ML workflows",
-        "Model monitoring basics"
       ]
     },
     {
@@ -60,9 +58,7 @@ export function SkillsSection() {
       title: "Languages",
       skills: [
         "Python",
-        "C",
-        "JavaScript",
-        "TypeScript"
+        "C,C ++ "
       ]
     }
   ];
