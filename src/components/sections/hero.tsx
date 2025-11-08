@@ -37,7 +37,7 @@ export function HeroSection() {
             transition={{ duration: 0.8 }}
             className="text-center md:text-left space-y-6"
           >
-            <br/><br/><br/>
+       
             
             <motion.h1
               className="text-4xl sm:text-5xl md:text-6xl lg:text-6xl font-bold text-white"
