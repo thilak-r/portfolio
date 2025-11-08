@@ -2,8 +2,9 @@
 
 import { memo, useCallback, useEffect, useRef } from "react";
 import { cn } from "@/lib/utils";
-import { animate } from "motion/react";
 
+// This is correct
+import { animate } from 'framer-motion';
 interface GlowingEffectProps {
   blur?: number;
   inactiveZone?: number;
