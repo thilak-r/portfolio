@@ -24,7 +24,7 @@ export function AchievementsSection() {
   ];
 
   return (
-    <section id="achievements" className="py-24 bg-[#0a0a0a] ">
+    <section id="achievements" className="py-24 bg-black ">
       <div   style={{ fontFamily:'rubik'}} className="container mx-auto px-6 max-w-7xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
