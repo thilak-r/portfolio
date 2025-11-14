@@ -10,7 +10,7 @@ export function ProjectsSection() {
       image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=800",
       tags: ["PyTorch", "Flask", "Grad-CAM", "Gemini API"],
       metrics: ["70% Accuracy", "0.73 Kappa Score"],
-      link: "https://github.com/thilak-r/Ensembling-xAI-towards-Diabetic-Retionopathy"
+      link: "https://github.com/thilak-r/Ensembling-xAI-towards-Diabetic-Retinopathy"
     },
     {
       title: "Real-Time Forest Fire Detection",
