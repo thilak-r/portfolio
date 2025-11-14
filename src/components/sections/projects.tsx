@@ -10,7 +10,7 @@ export function ProjectsSection() {
       image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=800",
       tags: ["PyTorch", "Flask", "Grad-CAM", "Gemini API"],
       metrics: ["70% Accuracy", "0.73 Kappa Score"],
-      link: "https://github.com/thilak-r/Diabetic-Retinopathy-Detection"
+      link: "https://github.com/thilak-r/Ensembling-xAI-towards-Diabetic-Retionopathy"
     },
     {
       title: "Real-Time Forest Fire Detection",
@@ -18,7 +18,7 @@ export function ProjectsSection() {
       image: "https://images.unsplash.com/photo-1611273426858-450d8e3c9fce?auto=format&fit=crop&w=800",
       tags: ["YOLOv8", "Flask", "OpenCV", "Python"],
       metrics: ["85.6% mAP@0.5", "53.7% mAP@0.5:0.95"],
-      link: "https://github.com/thilak-r/oil-spill-detection-AI"
+      link: "https://github.com/thilak-r/Forest-fire-detection-using-YOLOv8"
     },
     {
       title: "More than 10+ ML Projects",
