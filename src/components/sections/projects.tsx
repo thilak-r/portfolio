@@ -129,48 +129,7 @@ export function ProjectsSection() {
           ))}
         </div>
 
-        {/* Websites Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4, delay: 0.2 }}
-          viewport={{ once: true }}
-          className="mt-12"
-        >
-          <div className="bg-[#1a1a1a]/40 backdrop-blur-xl border border-[#2a2a2a]/50 rounded-xl p-6">
-            <h3 className="text-lg font-semibold text-white mb-4 flex items-center gap-2">
-              <span className="text-[#A855F7]">●</span> Built Websites
-            </h3>
-            
-            <div className="grid md:grid-cols-2 gap-4">
-              {websites.map((site, index) => (
-                <div
-                  key={index}
-                  className="bg-[#0a0a0a]/50 border border-[#2a2a2a]/50 rounded-lg p-4 hover:border-[#A855F7]/30 transition-all duration-200 group cursor-pointer"
-                  onClick={() => window.open(site.url, '_blank', 'noopener,noreferrer')}
-                >
-                  <div className="flex items-start justify-between mb-3">
-                    <h4 className="text-base font-semibold text-white group-hover:text-[#A855F7] transition-colors">
-                      {site.title}
-                    </h4>
-                    <ExternalLink className="w-4 h-4 text-gray-500 group-hover:text-[#A855F7] transition-colors flex-shrink-0" />
-                  </div>
-                  
-                  <div className="flex flex-wrap gap-2">
-                    {site.tags.map((tag, idx) => (
-                      <span
-                        key={idx}
-                        className="px-2 py-1 bg-[#A855F7]/10 text-[#A855F7] rounded text-xs font-medium"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </motion.div>
+       
       </div>
     </section>
   );
