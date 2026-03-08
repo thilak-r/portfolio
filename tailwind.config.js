@@ -79,7 +79,6 @@ export default {
     },
   },
   plugins: [
-    require('tailwindcss-animate'),
     addVariablesForColors,
   ],
 };

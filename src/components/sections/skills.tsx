@@ -1,107 +1,99 @@
 import { motion } from 'framer-motion';
-import { Bot, Code, Database, BarChart3, Cloud, FileCode } from 'lucide-react';
+import { Bot, BarChart3, Cloud, FileCode, Cpu, Container } from 'lucide-react';
 
 export function SkillsSection() {
   const skillCategories = [
     {
-      icon: <Bot className="h-8 w-8" />,
-      title: "Machine Learning & AI",
-      skills: [
-        "PyTorch",
-        "Scikit-learn",
-        "TensorFlow basics",
-        "Model training & fine-tuning",
-        "Grad-CAM & explainability",
-        "Computer vision (YOLOv8, CNNs)"
-      ]
+      icon: <Cpu className="w-5 h-5" />,
+      title: 'LLM & Agentic AI',
+      skills: ['LLM Fine-tuning & Prompting (OpenAI, Claude, Llama)', 'LangChain & LlamaIndex', 'RAG Systems', 'Vector DBs (Pinecone, Weaviate, Chroma)', 'Agentic Workflows & Multi-Agent Systems', 'Function Calling & Tool Use'],
     },
     {
-      icon: <Code className="h-8 w-8" />,
-      title: "LLM & Advanced AI",
-      skills: [
-        "Fine-tuning models with QLoRA",
-        "Chain-of-Thought (CoT) prompting",
-        "Unsloth framework",
-        "Dataset curation & processing"
-      ]
+      icon: <Bot className="w-5 h-5" />,
+      title: 'Quantum Computing',
+      skills: ['Qiskit (IBM Quantum)', 'Quantum Algorithms & Circuits', 'Quantum Machine Learning', 'IBM Quantum Experience'],
     },
     {
-      icon: <Database className="h-8 w-8" />,
-      title: "Development & Deployment",
-      skills: [
-        "Flask API development",
-        "MongoDB database management",
-        "Git version control",
-       
-      ]
+      icon: <Container className="w-5 h-5" />,
+      title: 'SRE/MLOps Stack',
+      skills: ['Kubernetes & Docker', 'Prometheus & Grafana', 'CI/CD (Jenkins, GitLab CI)', 'Infrastructure as Code (Terraform)', 'Model Deployment & Monitoring'],
     },
     {
-      icon: <BarChart3 className="h-8 w-8" />,
-      title: "Data Science",
-      skills: [
-        "Pandas, NumPy",
-        "Matplotlib, Seaborn",
-        "EDA & data preprocessing",
-        "Statistical analysis"
-      ]
+      icon: <Cloud className="w-5 h-5" />,
+      title: 'Cloud & DevOps',
+      skills: ['IBM Cloud', 'AWS / Azure / GCP', 'MLflow & Kubeflow', 'Site Reliability Engineering'],
     },
     {
-      icon: <Cloud className="h-8 w-8" />,
-      title: "MLOps & Cloud (Certified)",
-      skills: [
-        "Vertex AI (Google Cloud)",
-        "Feature Store management",
-      ]
+      icon: <BarChart3 className="w-5 h-5" />,
+      title: 'Data Science & ML',
+      skills: ['PyTorch & TensorFlow', 'Computer Vision (CNNs, YOLO)', 'Pandas, NumPy, Scikit-learn', 'EDA & Statistical Analysis'],
     },
     {
-      icon: <FileCode className="h-8 w-8" />,
-      title: "Languages",
-      skills: [
-        "Python",
-        "C,C ++ "
-      ]
-    }
+      icon: <FileCode className="w-5 h-5" />,
+      title: 'Core Development',
+      skills: ['Python', 'C / C++', 'JavaScript & TypeScript', 'React', 'Flask & REST APIs', 'Git'],
+    },
   ];
 
   return (
-    <section id="skills" className="py-24 bg-black">
-      <div   style={{ fontFamily:'rubik'}} className="container mx-auto px-6 max-w-7xl">
+    <section id="skills" className="py-24" style={{ backgroundColor: 'var(--color-bg)' }}>
+      <div className="section-container">
         <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.4 }}
-          viewport={{ once: true, margin: "-100px" }}
-          className="text-center mb-16"
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          viewport={{ once: true, margin: '-80px' }}
+          className="mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">Technical Skills</h2>
-          <div className="h-1 w-24 bg-[#00D9FF] mx-auto rounded-full"></div>
+          <p className="text-sm font-medium mb-2 tracking-wide uppercase" style={{ color: 'var(--color-accent)' }}>Skills</p>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4" style={{ color: 'var(--color-text-primary)' }}>Technical expertise</h2>
+          <div className="w-12 h-0.5" style={{ backgroundColor: 'var(--color-accent)' }} />
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {skillCategories.map((category, index) => (
-            <div
+            <motion.div
               key={index}
-              className="bg-[#1a1a1a] border-2 border-[#2a2a2a] rounded-2xl p-6 transition-colors duration-200 hover:border-[#00D9FF] group"
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4, delay: index * 0.06 }}
+              viewport={{ once: true, margin: '-60px' }}
+              className="p-6 rounded-xl card-hover group"
+              style={{ backgroundColor: 'var(--color-bg-elevated)', border: '1px solid var(--color-border)' }}
             >
-              <div className="flex items-center gap-4 mb-6 pb-4 border-b border-[#2a2a2a]">
-                <div className="bg-[#00D9FF]/10 p-3 rounded-xl border border-[#00D9FF]/20 text-[#00D9FF] transition-all duration-200 group-hover:bg-[#00D9FF]/20">
+              <div className="flex items-center gap-3 mb-5 pb-4" style={{ borderBottom: '1px solid var(--color-border)' }}>
+                <div
+                  className="p-2 rounded-lg transition-colors duration-200"
+                  style={{ backgroundColor: 'var(--color-bg-card)', border: '1px solid var(--color-border)', color: 'var(--color-accent)' }}
+                >
                   {category.icon}
                 </div>
-                <h3 className="text-xl font-semibold text-white">{category.title}</h3>
+                <h3 className="text-base font-semibold" style={{ color: 'var(--color-text-primary)' }}>{category.title}</h3>
               </div>
 
-              <ul className="space-y-3">
-                {category.skills.map((skill, skillIndex) => (
-                  <li
-                    key={skillIndex}
-                    className="flex items-start gap-3 text-gray-300"
+              <div className="flex flex-wrap gap-2">
+                {category.skills.map((skill, idx) => (
+                  <motion.span
+                    key={idx}
+                    initial={{ opacity: 0, y: 8 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.3, delay: index * 0.04 + idx * 0.03 }}
+                    viewport={{ once: true }}
+                    className="px-2.5 py-1 text-xs font-medium rounded-md cursor-default transition-colors duration-200"
+                    style={{
+                      backgroundColor: 'var(--color-bg-card)',
+                      border: '1px solid var(--color-border)',
+                      color: 'var(--color-text-secondary)',
+                    }}
+                    whileHover={{
+                      scale: 1.05,
+                    }}
                   >
-                    <div className="mt-1.5 h-2 w-2 rounded-full bg-[#A855F7] flex-shrink-0"></div>
-                    <span className="text-sm leading-relaxed">{skill}</span>
-                  </li>
+                    {skill}
+                  </motion.span>
                 ))}
-              </ul>
-            </div>
+              </div>
+            </motion.div>
           ))}
         </div>
       </div>

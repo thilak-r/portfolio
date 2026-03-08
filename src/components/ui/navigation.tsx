@@ -1,25 +1,24 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Sun, Moon } from 'lucide-react';
+import { useTheme } from './ThemeProvider';
 
 export function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
-  // 1. Add state for the mobile menu
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { theme, toggleTheme } = useTheme();
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
-
       const sections = ['home', 'about', 'experience', 'skills', 'projects', 'certifications', 'achievements', 'contact'];
       const scrollPosition = window.scrollY + 300;
-
       for (const section of sections) {
         const element = document.getElementById(section);
         if (element) {
           const offsetTop = element.offsetTop;
           const offsetHeight = element.offsetHeight;
-
           if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
             setActiveSection(section);
             break;
@@ -27,24 +26,14 @@ export function Navigation() {
         }
       }
     };
-
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // 2. Add useEffect to prevent body scroll when menu is open
   useEffect(() => {
-    if (isMobileMenuOpen) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = 'auto';
-    }
-    // Cleanup function
-    return () => {
-      document.body.style.overflow = 'auto';
-    };
+    document.body.style.overflow = isMobileMenuOpen ? 'hidden' : 'auto';
+    return () => { document.body.style.overflow = 'auto'; };
   }, [isMobileMenuOpen]);
-
 
   const navItems = [
     { href: '#home', label: 'Home' },
@@ -52,105 +41,160 @@ export function Navigation() {
     { href: '#experience', label: 'Experience' },
     { href: '#skills', label: 'Skills' },
     { href: '#projects', label: 'Projects' },
-    { href: '#certifications', label: 'Certifications' },
-    { href: '#achievements', label: 'Achievements' },
     { href: '#contact', label: 'Contact' },
   ];
 
-  // 3. Helper function to close the menu
-  const handleMobileLinkClick = () => {
-    setIsMobileMenuOpen(false);
-  };
+  const handleMobileLinkClick = () => setIsMobileMenuOpen(false);
 
   return (
     <motion.nav
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      className={`fixed w-full z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-[#0a0a0a]/80 backdrop-blur-lg py-4 border-b border-[#2a2a2a]/50' : 'bg-transparent py-6'
-      }`}
+      transition={{ duration: 0.5, ease: 'easeOut' }}
+      className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? 'py-3' : 'py-5'}`}
     >
-      <div className="container mx-auto px-6 max-w-7xl">
-        <div className="flex items-center justify-between">
+      <div className="section-container">
+        <div
+          className={`flex items-center justify-between transition-all duration-300 ${isScrolled
+              ? 'backdrop-blur-xl rounded-2xl px-8 py-3'
+              : ''
+            }`}
+          style={isScrolled ? {
+            backgroundColor: 'var(--nav-bg)',
+            border: '1px solid var(--color-border)',
+            boxShadow: '0 4px 24px rgba(0, 0, 0, 0.06)',
+          } : undefined}
+        >
           <a
             href="#home"
-            className="text-1xl font-bold text-white hover:text-[#00D9FF] transition-colors"
-            style={{ fontFamily: "" }}
+            className="text-sm font-semibold tracking-tight transition-colors duration-200"
+            style={{ color: 'var(--color-text-primary)' }}
+            onMouseEnter={e => (e.currentTarget.style.color = 'var(--color-accent)')}
+            onMouseLeave={e => (e.currentTarget.style.color = 'var(--color-text-primary)')}
           >
             Thilak R
           </a>
 
-          <div className="hidden md:flex space-x-8">
+          <div className="hidden md:flex items-center gap-1">
             {navItems.map((item) => (
               <a
                 key={item.href}
                 href={item.href}
-                className={`text-sm text-gray-300 hover:text-[#00D9FF] transition-colors duration-300 relative group font-medium ${
-                  activeSection === item.href.substring(1) ? 'text-[#00D9FF]' : ''
-                }`}
+                className="px-3 py-1.5 text-[13px] font-medium rounded-full transition-all duration-200"
+                style={{
+                  color: activeSection === item.href.substring(1) ? 'var(--color-text-primary)' : 'var(--color-text-secondary)',
+                  backgroundColor: activeSection === item.href.substring(1) ? 'var(--color-border)' : 'transparent',
+                }}
+                onMouseEnter={e => {
+                  if (activeSection !== item.href.substring(1)) e.currentTarget.style.color = 'var(--color-text-primary)';
+                }}
+                onMouseLeave={e => {
+                  if (activeSection !== item.href.substring(1)) e.currentTarget.style.color = 'var(--color-text-secondary)';
+                }}
               >
                 {item.label}
-                <span className={`absolute -bottom-1 left-0 w-0 h-0.5 bg-[#00D9FF] transition-all duration-300 group-hover:w-full ${
-                  activeSection === item.href.substring(1) ? 'w-full' : ''
-                }`}></span>
               </a>
             ))}
+
+            {/* Theme toggle */}
+            <button
+              onClick={toggleTheme}
+              aria-label="Toggle theme"
+              className="ml-2 p-2 rounded-full transition-all duration-200"
+              style={{
+                color: 'var(--color-text-muted)',
+                backgroundColor: 'transparent',
+              }}
+              onMouseEnter={e => {
+                e.currentTarget.style.color = 'var(--color-text-primary)';
+                e.currentTarget.style.backgroundColor = 'var(--color-border)';
+              }}
+              onMouseLeave={e => {
+                e.currentTarget.style.color = 'var(--color-text-muted)';
+                e.currentTarget.style.backgroundColor = 'transparent';
+              }}
+            >
+              <AnimatePresence mode="wait">
+                {theme === 'dark' ? (
+                  <motion.div
+                    key="sun"
+                    initial={{ rotate: -90, opacity: 0, scale: 0.5 }}
+                    animate={{ rotate: 0, opacity: 1, scale: 1 }}
+                    exit={{ rotate: 90, opacity: 0, scale: 0.5 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    <Sun className="w-4 h-4" />
+                  </motion.div>
+                ) : (
+                  <motion.div
+                    key="moon"
+                    initial={{ rotate: 90, opacity: 0, scale: 0.5 }}
+                    animate={{ rotate: 0, opacity: 1, scale: 1 }}
+                    exit={{ rotate: -90, opacity: 0, scale: 0.5 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    <Moon className="w-4 h-4" />
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </button>
           </div>
 
-          {/* 4. Update the hamburger button */}
-          <button
-            className="md:hidden text-white z-50" // z-50 to ensure it's above the menu
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} // Toggle state
-          >
-            <svg
-              className="w-6 h-6"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
+          <div className="flex items-center gap-2 md:hidden">
+            {/* Mobile theme toggle */}
+            <button
+              onClick={toggleTheme}
+              aria-label="Toggle theme"
+              className="p-2 z-50"
+              style={{ color: 'var(--color-text-muted)' }}
             >
-              {/* 5. Conditionally render "X" or "Menu" icon */}
-              {isMobileMenuOpen ? (
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M6 18L18 6M6 6l12 12" // "X" icon
-                />
-              ) : (
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M4 6h16M4 12h16M4 18h16" // Hamburger icon
-                />
-              )}
-            </svg>
-          </button>
+              {theme === 'dark' ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
+            </button>
+
+            <button
+              className="z-50 p-1"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              aria-label="Toggle menu"
+              style={{ color: 'var(--color-text-primary)' }}
+            >
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                {isMobileMenuOpen ? (
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M6 18L18 6M6 6l12 12" />
+                ) : (
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 6h16M4 12h16M4 18h16" />
+                )}
+              </svg>
+            </button>
+          </div>
         </div>
       </div>
 
-      {/* 6. Add the mobile menu overlay */}
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.3 }}
-            className="fixed top-0 left-0 w-full h-screen bg-[#0a0a0a] flex items-center justify-center md:hidden"
+            transition={{ duration: 0.2 }}
+            className="fixed inset-0 backdrop-blur-xl flex items-center justify-center md:hidden"
+            style={{ backgroundColor: 'var(--color-bg)' }}
           >
-            <div className="flex flex-col items-center space-y-8">
-              {navItems.map((item) => (
-                <a
+            <div className="flex flex-col items-center gap-6">
+              {navItems.map((item, i) => (
+                <motion.a
                   key={item.href}
                   href={item.href}
-                  onClick={handleMobileLinkClick} // Close menu on click
-                  className={`text-3xl text-gray-300 hover:text-[#00D9FF] transition-colors duration-300 ${
-                    activeSection === item.href.substring(1) ? 'text-[#00D9FF]' : ''
-                  }`}
+                  onClick={handleMobileLinkClick}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: i * 0.05 }}
+                  className="text-2xl font-medium transition-colors duration-200"
+                  style={{
+                    color: activeSection === item.href.substring(1) ? 'var(--color-text-primary)' : 'var(--color-text-muted)',
+                  }}
                 >
                   {item.label}
-                </a>
+                </motion.a>
               ))}
             </div>
           </motion.div>

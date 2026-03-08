@@ -1,20 +1,65 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title> Thilak </title>
+    <title>Thilak R — Data Scientist & ML Engineer</title>
+    <meta name="description" content="Thilak R Amalkar — Data Scientist at IBM (SRE Developer team) specializing in LLM, Agentic AI, Quantum Computing, and MLOps. View my portfolio, skills, and experience." />
+    <meta name="keywords" content="Thilak R, Thilak R Amalkar, Thilak data scientist, Data Scientist, IBM, Machine Learning, LLM, Agentic AI, Quantum Computing, Qiskit, SRE, MLOps, AI Engineer, Portfolio" />
+    <meta name="author" content="Thilak R" />
 
-<link
-  rel="stylesheet"
-  href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
-/>
+    <!-- Open Graph -->
+    <meta property="og:title" content="Thilak R — Data Scientist & AI Engineer" />
+    <meta property="og:description" content="Data Scientist at IBM (SRE Developer team) focusing on LLMs, Agentic workflows, and Quantum Computing." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://thilak-r.github.io/portfolio/" />
+    <meta property="og:image" content="https://thilak-r.github.io/portfolio/Thilak%20R.jpg" />
+    <meta property="og:image:alt" content="Thilak R - Data Scientist" />
 
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Thilak R — Data Scientist & AI Engineer" />
+    <meta name="twitter:description" content="Data Scientist at IBM (SRE Developer team) focusing on LLMs, Agentic workflows, and Quantum Computing." />
+    <meta name="twitter:image" content="https://thilak-r.github.io/portfolio/Thilak%20R.jpg" />
 
-    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <!-- Structured Data for SEO / Knowledge Graph -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Thilak R",
+      "alternateName": ["Thilak R Amalkar", "Thilak data scientist"],
+      "image": "https://thilak-r.github.io/portfolio/Thilak%20R.jpg",
+      "jobTitle": "Data Scientist",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "IBM"
+      },
+      "url": "https://thilak-r.github.io/portfolio/",
+      "sameAs": [
+        "https://linkedin.com/in/thilakramalkar",
+        "https://github.com/thilak-r"
+      ],
+      "knowsAbout": ["LLM", "Agentic AI", "Quantum Computing", "Data Science", "SRE", "MLOps"]
+    }
+    </script>
+
+    <!-- Prevent FOUC: set theme before any render -->
+    <script>
+      (function() {
+        var t = localStorage.getItem('portfolio-theme');
+        if (!t) t = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', t);
+      })();
+    </script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
   </head>
-  <body >
-    <div id="root" ></div>
+  <body>
+    <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

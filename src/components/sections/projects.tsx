@@ -1,135 +1,163 @@
 import { motion } from 'framer-motion';
-import { Button } from '@/components/ui/button';
-import { ExternalLink, Award, TrendingUp } from 'lucide-react';
+import { ExternalLink, TrendingUp, Github } from 'lucide-react';
 
 export function ProjectsSection() {
   const projects = [
     {
-      title: "Diabetic Retinopathy Detection System",
-      description: "End-to-end deep learning pipeline using ensemble learning (ResNet18, DenseNet121, EfficientNet-B0, ResNeXt50) with Grad-CAM explainability. Integrated Gemini 2.5 Pro for automated diagnostic report generation. Achieved 70% accuracy and 0.73 Cohen's Kappa on external validation.",
-      image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=800",
-      tags: ["PyTorch", "Flask", "Grad-CAM", "Gemini API"],
-      metrics: ["70% Accuracy", "0.73 Kappa Score"],
-      link: "https://github.com/thilak-r/Ensembling-xAI-towards-Diabetic-Retinopathy"
+      title: 'Diabetic Retinopathy Detection System',
+      description: 'End-to-end deep learning pipeline using ensemble learning (ResNet18, DenseNet121, EfficientNet-B0, ResNeXt50) with Grad-CAM explainability. Integrated Gemini 2.5 Pro for automated diagnostic report generation.',
+      tags: ['PyTorch', 'Flask', 'Grad-CAM', 'Gemini API'],
+      metrics: ['70% Accuracy', '0.73 Kappa Score'],
+      image: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=800&q=80',
+      link: 'https://github.com/thilak-r/Ensembling-xAI-towards-Diabetic-Retinopathy',
     },
     {
-      title: "Real-Time Forest Fire Detection",
-      description: "YOLOv8-based computer vision system trained on 1,722 annotated images. Deployed with Flask and OpenCV for live camera feed inference. Features rule-based alerting for immediate fire detection notifications.",
-      image: "https://images.unsplash.com/photo-1611273426858-450d8e3c9fce?auto=format&fit=crop&w=800",
-      tags: ["YOLOv8", "Flask", "OpenCV", "Python"],
-      metrics: ["85.6% mAP@0.5", "53.7% mAP@0.5:0.95"],
-      link: "https://github.com/thilak-r/Forest-fire-detection-using-YOLOv8"
+      title: 'Real-Time Forest Fire Detection',
+      description: 'YOLOv8-based computer vision system trained on 1,722 annotated images. Deployed with Flask and OpenCV for live camera feed inference with rule-based alerting.',
+      tags: ['YOLOv8', 'Flask', 'OpenCV', 'Python'],
+      metrics: ['85.6% mAP@0.5', '53.7% mAP@0.5:0.95'],
+      image: 'https://images.unsplash.com/photo-1611273426858-450d8e3c9fce?auto=format&fit=crop&w=800&q=80',
+      link: 'https://github.com/thilak-r/Forest-fire-detection-using-YOLOv8',
     },
     {
-      title: "More than 10+ ML Projects",
-      description: "Extensive portfolio of machine learning projects spanning computer vision, NLP, and data science. Projects include image classification, object detection, sentiment analysis, and predictive modeling using state-of-the-art frameworks and algorithms.",
-      image: "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?auto=format&fit=crop&w=800",
-      tags: ["TensorFlow", "PyTorch", "Scikit-learn", "Keras"],
-      link: "https://github.com/thilak-r"
-    }
+      title: '10+ ML Projects',
+      description: 'Extensive portfolio of machine learning projects spanning computer vision, NLP, and data science — including image classification, object detection, sentiment analysis, and predictive modeling.',
+      tags: ['TensorFlow', 'PyTorch', 'Scikit-learn', 'Keras'],
+      image: 'https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?auto=format&fit=crop&w=800&q=80',
+      link: 'https://github.com/thilak-r',
+    },
   ];
 
   const websites = [
-    {
-      title: "Ekvion AI",
-      url: "https://www.insightbridge.co.in/",
-      tags: ["React", "Tailwind", "Google OAuth", "Supabase"]
-    },
-    {
-      title: "Techtatva 2025",
-      url: "https://ekvion-event.netlify.app/",
-      tags: ["React", "Tailwind"]
-    }
+    { title: 'Ekvion AI', url: 'https://www.insightbridge.co.in/', tags: ['React', 'Tailwind', 'Google OAuth', 'Supabase'] },
+    { title: 'Techtatva 2025', url: 'https://ekvion-event.netlify.app/', tags: ['React', 'Tailwind'] },
   ];
 
   return (
-    <section id="projects" className="py-24 bg-black">
-      <div style={{ fontFamily:'rubik'}} className="container mx-auto px-6 max-w-7xl">
+    <section id="projects" className="py-24" style={{ backgroundColor: 'var(--color-bg)' }}>
+      <div className="section-container">
         <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.4 }}
-          viewport={{ once: true, margin: "-100px" }}
-          className="text-center mb-16"
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          viewport={{ once: true, margin: '-80px' }}
+          className="mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">Featured Projects</h2>
-          <p className="text-xl text-gray-400 mb-6">Building intelligent solutions with real-world impact</p>
-          <div className="h-1 w-24 bg-[#00D9FF] mx-auto rounded-full"></div>
+          <p className="text-sm font-medium mb-2 tracking-wide uppercase" style={{ color: 'var(--color-accent)' }}>Projects</p>
+          <h2 className="text-3xl md:text-4xl font-bold mb-2" style={{ color: 'var(--color-text-primary)' }}>Featured work</h2>
+          <p className="text-base mb-4" style={{ color: 'var(--color-text-muted)' }}>Building intelligent solutions with real-world impact</p>
+          <div className="w-12 h-0.5" style={{ backgroundColor: 'var(--color-accent)' }} />
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
           {projects.map((project, index) => (
-            <div
+            <motion.div
               key={index}
-              className="bg-[#1a1a1a]/40 backdrop-blur-xl border-2 border-[#2a2a2a]/50 rounded-2xl overflow-hidden transition-all duration-300 hover:border-[#00D9FF]/50 hover:shadow-[0_0_30px_rgba(0,217,255,0.15)] group flex flex-col"
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4, delay: index * 0.08 }}
+              viewport={{ once: true, margin: '-60px' }}
+              className="rounded-xl overflow-hidden card-hover group flex flex-col"
+              style={{ backgroundColor: 'var(--color-bg-elevated)', border: '1px solid var(--color-border)' }}
             >
-              <div className="relative overflow-hidden h-52">
+              <div className="relative h-48 overflow-hidden">
                 <img
                   src={project.image}
                   alt={project.title}
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  loading="lazy"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/60 to-transparent"></div>
+                <div className="absolute inset-0" style={{ backgroundColor: 'var(--color-overlay)' }} />
                 {project.metrics && (
-                  <div className="absolute top-4 left-4 bg-[#00D9FF]/90 backdrop-blur-sm text-black px-3 py-1.5 rounded-lg text-xs font-bold flex items-center gap-2 shadow-lg">
-                    <Award className="h-3 w-3" />
-                    High Performance
+                  <div className="absolute top-3 left-3 flex gap-2">
+                    {project.metrics.map((metric, idx) => (
+                      <span
+                        key={idx}
+                        className="inline-flex items-center gap-1 px-2 py-1 text-[10px] font-semibold backdrop-blur-sm rounded-md"
+                        style={{
+                          backgroundColor: 'var(--nav-bg)',
+                          border: '1px solid var(--color-border)',
+                          color: 'var(--color-accent)',
+                        }}
+                      >
+                        <TrendingUp className="w-3 h-3" />
+                        {metric}
+                      </span>
+                    ))}
                   </div>
                 )}
               </div>
 
-              <div className="p-6 space-y-4 flex-1 flex flex-col">
-                <h3 className="text-xl font-bold text-white transition-colors duration-200 group-hover:text-[#00D9FF]">
+              <div className="p-5 flex-1 flex flex-col">
+                <h3 className="text-base font-semibold mb-2 transition-colors duration-200" style={{ color: 'var(--color-text-primary)' }}>
                   {project.title}
                 </h3>
-
-                <p className="text-gray-400 text-sm leading-relaxed flex-1">
+                <p className="text-sm leading-relaxed mb-4 flex-1" style={{ color: 'var(--color-text-secondary)' }}>
                   {project.description}
                 </p>
 
-                {project.metrics && (
-                  <div className="flex flex-wrap gap-2 pt-2">
-                    {project.metrics.map((metric, idx) => (
-                      <div
-                        key={idx}   
-                        className="px-3 py-1.5 bg-[#00D9FF]/10 border border-[#00D9FF]/30 text-[#00D9FF] rounded-lg text-xs font-semibold flex items-center gap-1.5"
-                      >
-                        <TrendingUp className="h-3 w-3" />
-                        {metric}
-                      </div>
-                    ))}
-                  </div>
-                )}
-
-                <div className="flex flex-wrap gap-2 pt-2 border-t border-[#2a2a2a]">
+                <div className="flex flex-wrap gap-1.5 mb-4 pt-3" style={{ borderTop: '1px solid var(--color-border)' }}>
                   {project.tags.map((tag, idx) => (
                     <span
-                      key={idx} 
-                      style={{ borderRadius: '5px' }}
-                      className="px-3 py-1.5 bg-[#A855F7]/10 border border-[#A855F7]/20 text-[#A855F7] rounded-lg text-xs font-medium"
+                      key={idx}
+                      className="px-2 py-0.5 text-[11px] font-medium rounded"
+                      style={{ backgroundColor: 'var(--color-bg-card)', border: '1px solid var(--color-border)', color: 'var(--color-text-muted)' }}
                     >
                       {tag}
                     </span>
                   ))}
                 </div>
 
-                <div className="pt-4">
-                  <Button
-                    size="sm" 
-                    style={{ borderRadius: '5px' }}
-                    className="w-full bg-[#00D9FF] hover:bg-[#00D9FF]/80 text-black transition-all duration-200 font-semibold rounded-lg border-2 border-transparent hover:border-[#00D9FF]"
-                    onClick={() => window.open(project.link, '_blank', 'noopener,noreferrer')}
-                  >
-                    <ExternalLink className="w-4 h-4 mr-2" />
-                    Click Here to View
-                  </Button>
-                </div>
+                <a
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 text-sm font-medium transition-colors"
+                  style={{ color: 'var(--color-accent)' }}
+                >
+                  <Github className="w-4 h-4" />
+                  View on GitHub
+                </a>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
 
-       
+        {websites.length > 0 && (
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4 }}
+            viewport={{ once: true, margin: '-60px' }}
+            className="mt-12"
+          >
+            <h3 className="text-lg font-semibold mb-4" style={{ color: 'var(--color-text-primary)' }}>Web Applications</h3>
+            <div className="grid md:grid-cols-2 gap-4">
+              {websites.map((site, index) => (
+                <a
+                  key={index}
+                  href={site.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-between p-4 rounded-xl card-hover group"
+                  style={{ backgroundColor: 'var(--color-bg-elevated)', border: '1px solid var(--color-border)' }}
+                >
+                  <div>
+                    <p className="font-medium text-sm transition-colors" style={{ color: 'var(--color-text-primary)' }}>{site.title}</p>
+                    <div className="flex gap-1.5 mt-2">
+                      {site.tags.map((tag, idx) => (
+                        <span key={idx} className="px-2 py-0.5 text-[10px] font-medium rounded" style={{ backgroundColor: 'var(--color-bg-card)', border: '1px solid var(--color-border)', color: 'var(--color-text-muted)' }}>
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                  <ExternalLink className="w-4 h-4 flex-shrink-0 transition-colors" style={{ color: 'var(--color-text-muted)' }} />
+                </a>
+              ))}
+            </div>
+          </motion.div>
+        )}
       </div>
     </section>
   );

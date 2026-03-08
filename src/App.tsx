@@ -8,19 +8,14 @@ import { CertificationsSection } from '@/components/sections/certifications';
 import { AchievementsSection } from '@/components/sections/achievements';
 import { ContactSection } from '@/components/sections/contact';
 import { Footer } from '@/components/sections/footer';
-import { MagicCursor } from '@/components/ui/magic-cursor';
 import { ScrollProgress } from '@/components/ui/scroll-progress';
-import { Toaster } from '@/components/ui/toaster';
-
-import('@splinetool/runtime');
 
 function App() {
   return (
-    <div >
-      {/* <MagicCursor /> */}
+    <div>
       <ScrollProgress />
       <Navigation />
-      <main className="relative">
+      <main>
         <HeroSection />
         <AboutSection />
         <ExperienceSection />
@@ -31,7 +26,6 @@ function App() {
         <ContactSection />
         <Footer />
       </main>
-      <Toaster />
     </div>
   );
 }
