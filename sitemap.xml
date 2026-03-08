@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://thilak-r.github.io/portfolio/</loc>
+    <lastmod>2024-10-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://thilak-r.github.io/portfolio/Thilak%20R.jpg</image:loc>
+      <image:title>Thilak R — Data Scientist</image:title>
+      <image:caption>Thilak R — Data Scientist at IBM specializing in LLM, Agentic AI, and Quantum Computing</image:caption>
+    </image:image>
+  </url>
+</urlset>
