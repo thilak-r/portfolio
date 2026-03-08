@@ -20,6 +20,10 @@ export default {
         md: 'calc(var(--radius) - 2px)',
         sm: 'calc(var(--radius) - 4px)',
       },
+      fontFamily: {
+        sans: ['Inter', ...defaultTheme.fontFamily.sans],
+        heading: ['"Space Grotesk"', ...defaultTheme.fontFamily.sans],
+      },
       colors: {
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',

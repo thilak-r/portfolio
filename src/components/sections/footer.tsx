@@ -119,7 +119,7 @@ export function Footer() {
             className="text-xs flex items-center gap-1.5"
             style={{ color: 'var(--color-text-muted)' }}
           >
-            Built with <Heart className="w-3 h-3 text-red-500 fill-red-500" /> using React & TypeScript
+            Built with <Heart className="w-3 h-3 text-red-500 fill-red-500" /> Antigravity
           </p>
         </div>
       </div>

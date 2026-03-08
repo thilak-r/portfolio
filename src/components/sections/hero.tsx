@@ -60,16 +60,16 @@ export function HeroSection() {
                 className="text-2xl sm:text-3xl md:text-4xl font-medium tracking-tight"
                 style={{
                   color: 'var(--color-text-secondary)',
-                  fontFamily: "'Inter', sans-serif"
+                  fontFamily: "'Space Grotesk', sans-serif"
                 }}
               >
                 Hi, I'm
               </div>
               <h1
-                className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.05] flex justify-center md:justify-start items-center"
+                className="text-3xl sm:text-5xl md:text-4xl lg:text-5xl  tracking-tight leading-[1.05] flex justify-center md:justify-start items-center"
                 style={{
                   color: 'var(--color-accent)',
-                  fontFamily: "'Inter', sans-serif"
+                  fontFamily: "'Space Grotesk', sans-serif"
                 }}
               >
                 {"Thilak R".split('').map((char, index) => (
@@ -100,7 +100,7 @@ export function HeroSection() {
               transition={{ duration: 0.6, delay: 0.35 }}
               style={{
                 color: 'var(--color-text-secondary)',
-                fontFamily: "'Inter', sans-serif"
+                fontFamily: "'Space Grotesk', sans-serif"
               }}
             >
               Data Scientist at IBM working in the SRE Developer team. My core focus areas include LLM fine-tuning, Agentic AI development, and Quantum Computing research. Building the next generation of intelligent and scalable systems.
@@ -120,7 +120,7 @@ export function HeroSection() {
                 className="group inline-flex items-center gap-2.5 px-7 py-3.5 text-white text-sm font-semibold rounded-xl transition-all duration-300"
                 style={{
                   backgroundColor: 'var(--color-accent)',
-                  fontFamily: "'Inter', sans-serif",
+                  fontFamily: "'Space Grotesk', sans-serif",
                   boxShadow: '0 4px 16px rgba(59, 130, 246, 0.2)',
                 }}
                 onMouseEnter={e => {
@@ -144,7 +144,7 @@ export function HeroSection() {
                 style={{
                   border: '1.5px solid var(--color-border)',
                   color: 'var(--color-text-primary)',
-                  fontFamily: "'Inter', sans-serif",
+                  fontFamily: "'Space Grotesk', sans-serif",
                   backgroundColor: 'var(--color-bg)',
                 }}
                 onMouseEnter={e => {
